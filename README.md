@@ -1,6 +1,6 @@
 **Combining Transformer with a Depth Map for enhanced Low Light Performance for UHD Images**
 
-By- Dhanush Aaditya,  Harshil Bhojwani.
+By- Dhanush Adithya,  Harshil Bhojwani.
 
 Download Depthanythingv2 metric depth from 
 https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-VKITTI-Large/resolve/main/depth_anything_v2_metric_vkitti_vitl.pth?download=true 
