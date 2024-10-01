@@ -15,11 +15,15 @@ into **checkpoints/LLFormer_LOL/models/**
 Dataset Download Link for LOL - https://daooshee.github.io/BMVC2018website/
 within dataset directory
  ├──LOL
-     └──train
+     └──train
+     
           ├──low
           └──high
+          
  ├──LOL
+ 
      └──val
+     
           ├──low
           └──high
 
