@@ -23,3 +23,10 @@ for training
 python train.py
 all the configs have been set to run the file and change yaml file in configs if any of the above-mentioned directories are changed
 
+
+
+References
+LLformer - https://github.com/TaoWangzj/LLFormer/tree/main
+Metric Depth - https://github.com/DepthAnything/Depth-Anything-V2/tree/main/metric_depth
+
+
