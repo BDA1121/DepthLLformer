@@ -23,6 +23,9 @@ for training
 python train.py
 all the configs have been set to run the file and change yaml file in configs if any of the above-mentioned directories are changed
 
+Files edited train.py and test.py, files added metric-depth/pipeline.py
+
+
 
 
 References
