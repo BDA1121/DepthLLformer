@@ -2,6 +2,8 @@
 ## Tao Wang, Kaihao Zhang, Tianrun Shen, Wenhan Luo, Bjorn Stenger, Tong Lu
 ## https://arxiv.org/pdf/2212.11548.pdf
 
+## modified by Harshil Bhojwani and Dhanush Adithya
+
 import torch
 import torchvision.transforms.functional as TF
 import torch.nn.functional as F
