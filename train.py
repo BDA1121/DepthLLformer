@@ -2,6 +2,8 @@
 ## Tao Wang, Kaihao Zhang, Tianrun Shen, Wenhan Luo, Bjorn Stenger, Tong Lu
 ## https://arxiv.org/pdf/2212.11548.pdf
 
+## modified by Harshil Bhojwani and Dhanush Adithya
+
 import os
 import torch
 import yaml
@@ -26,6 +28,7 @@ parser = argparse.ArgumentParser(description='Hyper-parameters for LLFormer')
 parser.add_argument('-yml_path', default="./configs/LOL/train/training_LOL.yaml", type=str)
 args = parser.parse_args()
 
+## load depth anything model
 depth_model = load_model()
 
 ## Set Seeds
@@ -47,6 +50,8 @@ OPT = opt['OPTIM']
 
 ## Build Model
 print('==> Build the model')
+
+## increased channels to 6
 model_restored = LLFormer(inp_channels=6,out_channels=3,dim = 16,num_blocks = [2,4,8,16],num_refinement_blocks = 2,heads = [1,2,4,8],ffn_expansion_factor = 2.66,bias = False,LayerNorm_type = 'WithBias',attention=True,skip = False)
 p_number = network_parameters(model_restored)
 model_restored.cuda()
@@ -147,10 +152,12 @@ for epoch in range(start_epoch, OPT['EPOCHS'] + 1):
         for param in model_restored.parameters():
             param.grad = None
         target = data[0].cuda()
+        ## get depth map
         depth = depth_estimation(data[1],depth_model)
         # assert depth.shape[1] == 1,depth.shape
         # depth_tensor_3ch = depth_tensor.repeat(1, 3, 1, 1)
         raw = data[1].cuda()
+        ##concatenate
         input_ = torch.cat((raw, depth), 1)
 
 
@@ -158,6 +165,9 @@ for epoch in range(start_epoch, OPT['EPOCHS'] + 1):
 
         # Compute loss
         # loss = Charloss(restored, target)
+
+        
+        ##new loss function and skip connection is done by adding raw image to output
         loss1 = l1loss(restored+raw, target)
         loss2 = l2loss(restored+raw, target)
         loss =  0.5 * loss1 + 0.5 * loss2
