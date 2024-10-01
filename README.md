@@ -2,6 +2,8 @@
 
 By- Dhanush Adithya,  Harshil Bhojwani.
 
+3 travel days used
+
 Download Depthanythingv2 metric depth from 
 https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-VKITTI-Large/resolve/main/depth_anything_v2_metric_vkitti_vitl.pth?download=true 
 into **"metric_depth/checkpoints/"**
