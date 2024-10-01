@@ -13,16 +13,7 @@ into **checkpoints/LLFormer_LOL/models/**
 **OS - Linux**
 
 Dataset Download Link for LOL - https://daooshee.github.io/BMVC2018website/
-within dataset directory
- ├──LOL
-     └──train
-          ├──low
-          └──high
-          
- ├──LOL
-     └──val
-          ├──low
-          └──high
+within dataset directory, check the directory heirarchy configuration inside the directory
 
 run 
 python test.py
